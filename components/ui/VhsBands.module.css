@@ -1,0 +1,7 @@
+.vhs {
+  display: flex;
+}
+
+.vhs div {
+  flex: 1;
+}

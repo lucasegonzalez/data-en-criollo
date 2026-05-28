@@ -1,0 +1,76 @@
+.monitorWrap {
+  flex: 1;
+  padding: 8px;
+  background: var(--papel);
+  min-height: 0;
+}
+
+.monitorOuter {
+  height: 100%;
+  background: var(--tinta);
+  border: 3px solid var(--tinta);
+  border-radius: 6px 6px 3px 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.monitorScreen {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 10px;
+  background: #0a0a0a;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.2) 3px,
+    rgba(0, 0, 0, 0.2) 4px
+  );
+  pointer-events: none;
+  z-index: 6;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.75);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.staticLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.monitorChin {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to bottom, #2a2520, #1a1510);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.powerLed {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--terracota);
+  box-shadow: 0 0 4px var(--terracota);
+}

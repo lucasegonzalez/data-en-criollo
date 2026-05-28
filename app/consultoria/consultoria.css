@@ -1,0 +1,31 @@
+/* ── Consultoría Financiera — scoped design tokens ── */
+/* Warm retro-minimalist palette, no CRT aesthetic.      */
+
+.consulting-layout {
+  --consult-bg: #F5EDD8;
+  --consult-text: #1C1810;
+  --consult-accent: #C0392B;
+  --consult-accent-hover: #A83225;
+  --consult-warm: #C8843A;
+  --consult-muted: #8B7D6B;
+  --consult-border: #D4C9B0;
+  --consult-card-bg: #EDE4CC;
+  --consult-success: #5A8F5A;
+  --consult-error: #C0392B;
+  --consult-input-bg: #FFFFFF;
+  --consult-input-border: #C0B8A0;
+
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  color: var(--consult-text);
+  background: var(--consult-bg);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.consulting-layout h1,
+.consulting-layout h2,
+.consulting-layout h3 {
+  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 1.2;
+}

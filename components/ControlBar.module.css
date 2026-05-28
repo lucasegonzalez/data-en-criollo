@@ -1,0 +1,75 @@
+.ctrlBar {
+  flex-shrink: 0;
+  background: var(--papel2);
+  border-top: 2px solid var(--tinta);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chDisplay {
+  font-size: 10px;
+  color: var(--tinta);
+  letter-spacing: 0.1em;
+  opacity: 0.55;
+}
+
+.frow {
+  flex-shrink: 0;
+  background: var(--papel2);
+  border-top: 1.5px solid var(--tinta);
+  display: flex;
+  overflow-x: auto;
+}
+
+.fi {
+  flex-shrink: 0;
+  width: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 3px;
+  cursor: pointer;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.fiImg {
+  width: 22px;
+  height: 20px;
+  background: var(--papel);
+  border: 1.5px solid var(--tinta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fiSelected .fiImg {
+  background: var(--tinta);
+}
+
+.fiLbl {
+  font-size: 8px;
+  color: var(--tinta);
+  text-align: center;
+  line-height: 1.1;
+  width: 100%;
+}
+
+.fiSelected .fiLbl {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+.moreBtn {
+  flex-shrink: 0;
+  width: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 2px;
+  opacity: 0.4;
+  cursor: pointer;
+}

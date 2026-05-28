@@ -1,0 +1,249 @@
+.section {
+  padding: 60px 24px 80px;
+  background: var(--consult-card-bg);
+  scroll-margin-top: 32px;
+}
+
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--consult-text);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--consult-muted);
+  text-align: center;
+  margin-bottom: 36px;
+  line-height: 1.5;
+}
+
+/* Calendar */
+.calHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.calMonth {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--consult-text);
+  letter-spacing: 0.02em;
+}
+
+.navBtn {
+  background: none;
+  border: 1.5px solid var(--consult-border);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--consult-text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  transition: background 0.2s ease;
+}
+
+.navBtn:hover {
+  background: var(--consult-bg);
+}
+
+.calGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.calDayHeader {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--consult-muted);
+  text-align: center;
+  padding: 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.calDay {
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 4px;
+  color: var(--consult-text);
+  cursor: default;
+  transition: background 0.15s ease;
+}
+
+.calDayAvailable {
+  cursor: pointer;
+  background: var(--consult-bg);
+  border: 1.5px solid transparent;
+  font-weight: 500;
+}
+
+.calDayAvailable:hover {
+  border-color: var(--consult-accent);
+  background: var(--consult-card-bg);
+}
+
+.calDaySelected {
+  background: var(--consult-accent) !important;
+  color: #fff;
+  border-color: var(--consult-accent) !important;
+  font-weight: 600;
+}
+
+/* Time slots */
+.timeSection {
+  margin-bottom: 24px;
+}
+
+.timeLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--consult-text);
+  margin-bottom: 10px;
+}
+
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.timeSlot {
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 10px 8px;
+  border: 1.5px solid var(--consult-border);
+  border-radius: 4px;
+  cursor: pointer;
+  background: var(--consult-input-bg);
+  color: var(--consult-text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.timeSlot:hover {
+  border-color: var(--consult-accent);
+}
+
+.timeSlotSelected {
+  background: var(--consult-text);
+  color: #fff;
+  border-color: var(--consult-text);
+}
+
+/* Summary */
+.summary {
+  font-size: 0.9rem;
+  color: var(--consult-text);
+  text-align: center;
+  padding: 12px;
+  background: var(--consult-bg);
+  border: 1.5px solid var(--consult-border);
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Input row */
+.inputRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.emailInput {
+  flex: 1;
+  font-size: 0.9rem;
+  padding: 12px 14px;
+  border: 1.5px solid var(--consult-input-border);
+  border-radius: 6px;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  color: var(--consult-text);
+  background: var(--consult-input-bg);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.emailInput:focus {
+  border-color: var(--consult-accent);
+}
+
+.emailInput::placeholder {
+  color: var(--consult-muted);
+}
+
+.submitBtn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  background: var(--consult-accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.submitBtn:hover {
+  background: var(--consult-accent-hover);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Success state */
+.successBox {
+  text-align: center;
+  padding: 36px 24px;
+  background: var(--consult-bg);
+  border: 1.5px solid var(--consult-success);
+  border-radius: 6px;
+}
+
+.successTitle {
+  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
+  color: var(--consult-success);
+  margin-bottom: 8px;
+}
+
+.successDetail {
+  font-size: 0.9rem;
+  color: var(--consult-muted);
+  line-height: 1.5;
+}
+
+/* Error */
+.error {
+  font-size: 0.8rem;
+  color: var(--consult-error);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 480px) {
+  .inputRow {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+}

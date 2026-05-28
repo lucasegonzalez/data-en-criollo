@@ -1,0 +1,132 @@
+/* ── Ámbar Retrobrutalism Palette ── */
+:root {
+  --accent: #D4872E;
+  --accent2: #8B5E1E;
+  --bg: #FDF6EC;
+  --card-bg: #FFFBF5;
+  --block-bg: #2C1810;
+  --block-text: #FDF6EC;
+  --tinta: #1a1a1a;
+  --border-width: 3px;
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--tinta);
+  font-family: 'Source Serif 4', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ── Scanline overlay ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.025) 2px,
+    rgba(0, 0, 0, 0.025) 4px
+  );
+}
+
+/* ── CRT power-on flicker ── */
+@keyframes crtFlicker {
+  0%   { opacity: 0.85; }
+  10%  { opacity: 0.9; }
+  20%  { opacity: 0.05; background: #fff; }
+  30%  { opacity: 0.95; }
+  45%  { opacity: 0.08; background: #fff; }
+  55%  { opacity: 0.9; }
+  70%  { opacity: 0.2; }
+  85%  { opacity: 0.95; }
+  100% { opacity: 0; }
+}
+
+body.crt-on::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  background: var(--bg);
+  animation: crtFlicker 0.4s ease-out forwards;
+}
+
+/* ── Typewriter effect for H1 ── */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typewriter-line {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 1.2s steps(30, end) forwards;
+  max-width: fit-content;
+}
+
+/* ── Scroll reveal ── */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Blinking cursor ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}

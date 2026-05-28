@@ -1,0 +1,53 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 48px 24px 64px;
+  background: var(--consult-bg);
+}
+
+.label {
+  font-size: 0.85rem;
+  color: var(--consult-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--consult-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1.5px solid var(--consult-border);
+  border-radius: 6px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.link:hover {
+  background: var(--consult-card-bg);
+  border-color: var(--consult-accent);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
