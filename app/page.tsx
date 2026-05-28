@@ -1,31 +1,11 @@
 'use client'
 
-import { useEffect } from 'react'
 import './landing.css'
 import { Carousel } from '@/components/landing/Carousel'
 import { Calculator } from '@/components/landing/Calculator'
 import { Booking } from '@/components/landing/Booking'
 
 export default function Home() {
-  useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setTimeout(
-              () => e.target.classList.add('on'),
-              parseInt(e.target.getAttribute('data-delay') || '0')
-            )
-            io.unobserve(e.target)
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-    document.querySelectorAll('.rv').forEach((el) => io.observe(el))
-    return () => io.disconnect()
-  }, [])
-
   return (
     <div className="landing-page">
       <div className="lp-app">
@@ -68,7 +48,7 @@ export default function Home() {
           <div className="he-in">
             <p className="he-ey rv">Tu negocio merece certeza, no suposiciones</p>
             <h1 className="rv">
-              Evaluá el riesgo<br />
+              <span className="tw">Evaluá el riesgo</span><br />
               antes de<br />
               <em>invertir.</em>
             </h1>
@@ -77,7 +57,7 @@ export default function Home() {
               de datos claro y aplicado para emprendedores y dueños de negocio argentinos.
             </p>
           </div>
-          <div className="he-dc" aria-hidden="true">▲ +12.4%{'\n'}  │  ╭──╮{'\n'}  │╭─╯  ╰─╮{'\n'}  │╯       ╰──{'\n'}  └────────▶</div>
+          <div className="he-dc" aria-hidden="true">{'▲ +12.4%\n  │  ╭──╮\n  │╭─╯  ╰─╮\n  │╯       ╰──\n  └────────▶'}</div>
         </section>
 
         {/* CAROUSEL */}

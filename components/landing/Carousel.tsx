@@ -11,16 +11,16 @@ const SLIDES = [
     svg: (
       <svg viewBox="0 0 660 280" fill="none">
         <g transform="translate(0,280) scale(1,-1)">
-          <rect x="60" y="0" width="50" height="90" fill="#D4872E" opacity=".3" />
-          <rect x="125" y="0" width="50" height="130" fill="#D4872E" opacity=".5" />
-          <rect x="190" y="0" width="50" height="105" fill="#D4872E" opacity=".45" />
-          <rect x="255" y="0" width="50" height="160" fill="#D4872E" opacity=".65" />
-          <rect x="320" y="0" width="50" height="200" fill="#D4872E" opacity=".85" />
-          <rect x="385" y="0" width="50" height="140" fill="#C0392B" opacity=".9" />
-          <rect x="450" y="0" width="50" height="80" fill="#C0392B" opacity=".7" />
-          <rect x="515" y="0" width="50" height="50" fill="#C0392B" opacity=".5" />
+          <rect x="60" y="0" width="50" height="90" fill="#D4872E" opacity=".3" style={{transformOrigin:'60px 0',animation:'barGrow .7s ease .1s both'}} />
+          <rect x="125" y="0" width="50" height="130" fill="#D4872E" opacity=".5" style={{transformOrigin:'125px 0',animation:'barGrow .7s ease .2s both'}} />
+          <rect x="190" y="0" width="50" height="105" fill="#D4872E" opacity=".45" style={{transformOrigin:'190px 0',animation:'barGrow .7s ease .3s both'}} />
+          <rect x="255" y="0" width="50" height="160" fill="#D4872E" opacity=".65" style={{transformOrigin:'255px 0',animation:'barGrow .7s ease .4s both'}} />
+          <rect x="320" y="0" width="50" height="200" fill="#D4872E" opacity=".85" style={{transformOrigin:'320px 0',animation:'barGrow .7s ease .5s both'}} />
+          <rect x="385" y="0" width="50" height="140" fill="#C0392B" opacity=".9" style={{transformOrigin:'385px 0',animation:'barGrow .7s ease .45s both'}} />
+          <rect x="450" y="0" width="50" height="80" fill="#C0392B" opacity=".7" style={{transformOrigin:'450px 0',animation:'barGrow .7s ease .35s both'}} />
+          <rect x="515" y="0" width="50" height="50" fill="#C0392B" opacity=".5" style={{transformOrigin:'515px 0',animation:'barGrow .7s ease .25s both'}} />
         </g>
-        <polyline points="85,205 150,178 215,190 280,142 345,96 410,152 475,208 540,232" stroke="#E74C3C" strokeWidth="2" fill="none" strokeLinecap="round" strokeDasharray="500" strokeDashoffset="500" />
+        <polyline points="85,205 150,178 215,190 280,142 345,96 410,152 475,208 540,232" stroke="#E74C3C" strokeWidth="2" fill="none" strokeLinecap="round" strokeDasharray="500" strokeDashoffset="500" style={{animation:'drawLine 1.8s ease .6s forwards'}} />
         <text x="395" y="80" fontFamily="monospace" fontSize="11" fill="#E74C3C" opacity=".7">CHURN ↑</text>
         <line x1="40" y1="10" x2="40" y2="260" stroke="#FDF6EC" strokeWidth=".5" opacity=".1" />
         <line x1="40" y1="260" x2="620" y2="260" stroke="#FDF6EC" strokeWidth=".5" opacity=".1" />
@@ -43,8 +43,8 @@ const SLIDES = [
         <text x="355" y="95" fontFamily="monospace" fontSize="10" fill="#D4872E" opacity=".8">GANANCIA</text>
         <text x="335" y="210" fontFamily="monospace" fontSize="10" fill="#E74C3C" opacity=".8">COSTOS</text>
         <text x="220" y="130" fontFamily="monospace" fontSize="10" fill="#FDF6EC" opacity=".3">FIJOS</text>
-        <circle cx="330" cy="140" r="5" fill="#D4872E" />
-        <line x1="330" y1="140" x2="380" y2="80" stroke="#D4872E" strokeWidth="1.5" opacity=".6" />
+        <circle cx="330" cy="140" r="5" fill="#D4872E" style={{animation:'pulse 2s infinite'}} />
+        <line x1="330" y1="140" x2="380" y2="80" stroke="#D4872E" strokeWidth="1.5" opacity=".6" style={{transformOrigin:'330px 140px',animation:'spinSlow 12s linear infinite'}} />
       </svg>
     ),
   },
@@ -69,7 +69,7 @@ const SLIDES = [
         <circle cx="470" cy="80" r="6" fill="#D4872E" opacity=".8" />
         <circle cx="510" cy="65" r="4.5" fill="#D4872E" opacity=".7" />
         <circle cx="555" cy="50" r="5" fill="#D4872E" />
-        <line x1="90" y1="222" x2="570" y2="42" stroke="#FDF6EC" strokeWidth="1.5" strokeDasharray="6,4" opacity=".3" />
+        <line x1="90" y1="222" x2="570" y2="42" stroke="#FDF6EC" strokeWidth="1.5" strokeDasharray="6,4" opacity=".3" style={{strokeDashoffset:'300',animation:'drawLine 2s ease .3s forwards'}} />
         <text x="540" y="38" fontFamily="monospace" fontSize="9" fill="#D4872E" opacity=".7">r = 0.94</text>
         <text x="65" y="255" fontFamily="monospace" fontSize="9" fill="#FDF6EC" opacity=".2">INVERSIÓN EN MARKETING</text>
       </svg>
@@ -82,13 +82,13 @@ const SLIDES = [
     body: 'El flujo de caja proyectado es la diferencia entre un negocio que sobrevive una crisis y uno que no. Con 3 meses de historial se puede modelar. ¿Lo tenés hecho?',
     svg: (
       <svg viewBox="0 0 660 280" fill="none">
-        <path d="M60 140 C 120 140 120 80 180 80 S 240 160 300 100 S 360 40 420 60 S 480 120 540 100 S 600 80 620 80" stroke="#D4872E" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeDasharray="700" strokeDashoffset="700" />
-        <path d="M60 140 C 120 140 120 180 180 200 S 240 220 300 240 S 360 240 420 230" stroke="#C0392B" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="500" strokeDashoffset="500" opacity=".5" />
+        <path d="M60 140 C 120 140 120 80 180 80 S 240 160 300 100 S 360 40 420 60 S 480 120 540 100 S 600 80 620 80" stroke="#D4872E" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeDasharray="700" strokeDashoffset="700" style={{animation:'drawLine 2.5s ease .2s forwards'}} />
+        <path d="M60 140 C 120 140 120 180 180 200 S 240 220 300 240 S 360 240 420 230" stroke="#C0392B" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="500" strokeDashoffset="500" opacity=".5" style={{animation:'drawLine 2s ease .8s forwards'}} />
         <line x1="60" y1="30" x2="60" y2="260" stroke="#FDF6EC" strokeWidth=".5" opacity=".1" />
         <line x1="60" y1="140" x2="630" y2="140" stroke="#FDF6EC" strokeWidth=".5" opacity=".15" strokeDasharray="4,4" />
         <text x="630" y="144" fontFamily="monospace" fontSize="9" fill="#FDF6EC" opacity=".3">$0</text>
-        <circle cx="300" cy="100" r="5" fill="#D4872E" />
-        <circle cx="420" cy="230" r="4" fill="#C0392B" opacity=".8" />
+        <circle cx="300" cy="100" r="5" fill="#D4872E" style={{animation:'floatUp 3s ease-in-out infinite'}} />
+        <circle cx="420" cy="230" r="4" fill="#C0392B" opacity=".8" style={{animation:'floatUp 3s ease-in-out .5s infinite'}} />
         <text x="280" y="90" fontFamily="monospace" fontSize="9" fill="#D4872E" opacity=".7">INGRESOS</text>
         <text x="430" y="245" fontFamily="monospace" fontSize="9" fill="#E74C3C" opacity=".6">EGRESOS</text>
         <rect x="285" y="150" width="80" height="60" fill="#C0392B" opacity=".08" />
